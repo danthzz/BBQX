@@ -30,32 +30,32 @@ export default function Navbar() {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-           setAudio(true)
+            setAudio(true)
         }, 2000); // Delay of 2 seconds
 
         return () => clearTimeout(timer);
     }, []);
 
     return (
-        <nav className="navbar navbar-expand-lg bg-black">
+        <nav className="navbar navbar-expand-lg bg-black z-1 fixed-top">
             <div className="container-fluid">
                 <img src={logo} alt="" className="navbar-brand logo" />
-                <button className="navbar-toggler bg-secondary ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler bg-secondary " type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse text-center align-items-center" id="navbarTogglerDemo02">
-                    <ul className="navbar-nav ms-auto align-items-center">
-                        <li className="nav-item me-4">
+                <div className="collapse navbar-collapse align-items-center justify-content-between text-center" id="navbarTogglerDemo02">
+                    <ul className="navbar-nav ms-md-auto mb-2 align-items-center">
+                        <li className="nav-item me-4 ms-3">
                             <a className="nav-link active text-light" aria-current="page" href="#home">Home</a>
                         </li>
-                        <li className="nav-item me-4">
+                        <li className="nav-item me-4 ms-3">
                             <a className="nav-link text-light" href="#">Assadores</a>
                         </li>
-                        <li className="nav-item me-4">
-                            <a className="nav-link text-light" href="#">Ingressos</a>
+                        <li className="nav-item me-4 ms-3">
+                            <a className="nav-link text-light ms-2" href="#">Ingressos</a>
                         </li>
                     </ul>
-                    <ul className="navbar-nav ms-auto justify-content-center text-center align-items-center">
+                    <ul className="navbar-nav ms-md-auto mb-2 justify-content-center text-center align-items-center">
                         <li className="nav-item">
                             {audio ? <VolumeUp className="text-white" onClick={handleAudioOff} /> : <VolumeOff className="text-white" onClick={handleAudioOn} />}
                         </li>

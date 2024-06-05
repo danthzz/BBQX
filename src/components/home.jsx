@@ -35,7 +35,7 @@ export default function Home() {
             <img src={background} alt="" className="img-fluid" />
             <div className="row justify-content-center align-items-center mt-5 pt-4 px-2">
                 <div className="col-12">
-                    <div className="d-block d-md-flex justify-content-around">
+                    <div className="d-block d-lg-flex justify-content-around">
                         <div className="d-flex justify-content-center mb-4">
                             <p className="fs-2 titulo mt-4 me-2">
                                 03
