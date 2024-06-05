@@ -1,0 +1,21 @@
+body {
+    font-family: "Dela Gothic One", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    color: #fff;
+    background-color: #000;
+}
+
+::-webkit-scrollbar{
+    width: .60rem;
+    background-color: #000;
+ }
+ 
+ ::-webkit-scrollbar-thumb{
+    background-color: #9b241e;
+    border-radius: .5rem;
+ }
+ 
+ ::-webkit-scrollbar-thumb:hover{
+    background-color: #e09089;
+ }
