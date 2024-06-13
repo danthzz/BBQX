@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./navbar.css"; // Importe o arquivo CSS
+import "./navbar.css";
 import logo from '../assets/logow.png'
 import som from '../assets/som.mp3'
 
@@ -13,31 +13,55 @@ export default function Navbar() {
     const audioRef = useRef(null);
 
     const handleAudioOff = () => {
-        setAudio(false)
-    }
+        setAudio(false);
+    };
 
     const handleAudioOn = () => {
-        setAudio(true)
-    }
+        setAudio(true);
+    };
+
+    const handleUserInteraction = () => {
+        if (audioRef.current && !audio) {
+            audioRef.current.play().catch(() => {
+            });
+            setAudio(true);
+        }
+    };
 
     useEffect(() => {
         if (audio) {
-            audioRef.current.play();
+            audioRef.current.play().catch(() => {
+            });
         } else {
             audioRef.current.pause();
         }
     }, [audio]);
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setAudio(true)
-        }, 2000); // Delay of 2 seconds
+        window.addEventListener('click', handleUserInteraction);
+        window.addEventListener('keydown', handleUserInteraction);
+        window.addEventListener('scroll', handleUserInteraction);
 
-        return () => clearTimeout(timer);
+        return () => {
+            window.removeEventListener('click', handleUserInteraction);
+            window.removeEventListener('keydown', handleUserInteraction);
+            window.removeEventListener('scroll', handleUserInteraction);
+        };
     }, []);
 
+    const scrollToSection = (divId) => {
+        const section = document.getElementById(divId);
+        if (section) {
+            const offset = section.offsetTop - 100;
+            window.scroll({
+                top: offset,
+                behavior: "smooth"
+            });
+        }
+    };
+
     return (
-        <nav className="navbar navbar-expand-lg bg-black z-1 fixed-top">
+        <nav className="navbar navbar-expand-lg bg-black z-1 fixed-top py-0">
             <div className="container-fluid">
                 <img src={logo} alt="" className="navbar-brand logo" />
                 <button className="navbar-toggler bg-secondary " type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,13 +70,13 @@ export default function Navbar() {
                 <div className="collapse navbar-collapse align-items-center justify-content-between text-center" id="navbarTogglerDemo02">
                     <ul className="navbar-nav ms-md-auto mb-2 align-items-center">
                         <li className="nav-item me-4 ms-3">
-                            <a className="nav-link active text-light" aria-current="page" href="#home">Home</a>
+                            <a className="nav-link active text-light" aria-current="page" onClick={() => scrollToSection('home')}>Home</a>
                         </li>
                         <li className="nav-item me-4 ms-3">
-                            <a className="nav-link text-light" href="#">Assadores</a>
+                            <a className="nav-link text-light" onClick={() => scrollToSection('workers')}>Assadores</a>
                         </li>
                         <li className="nav-item me-4 ms-3">
-                            <a className="nav-link text-light ms-2" href="#">Ingressos</a>
+                            <a className="nav-link text-light ms-2" onClick={() => scrollToSection('tickets')}>Ingressos</a>
                         </li>
                     </ul>
                     <ul className="navbar-nav ms-md-auto mb-2 justify-content-center text-center align-items-center">

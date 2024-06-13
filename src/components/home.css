@@ -2,7 +2,15 @@
     margin-top: 6.5em;
 }
 
-.row{
+.bordered{
     border: 2px solid #9b241e;
     border-radius: 5px;
+}
+
+.titulo{
+    font-size: 50px;
+}
+
+.sub-title{
+    font-size: 30px;
 }
