@@ -1,5 +1,4 @@
 import React from "react";
-import './cards.css'; // Lembre-se de criar e importar o arquivo CSS
 
 function Card({ image, title, resume }) {
     return (
