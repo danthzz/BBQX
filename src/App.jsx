@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import './App.css';
 import Navbar from './components/navbar';
@@ -8,6 +9,8 @@ import Pics from './components/pics';
 import Footer from './components/footer';
 import Counter from './components/counter'
 import Adress from './components/adress';
+import Bands from './components/bands';
+import Protein from './components/proteins';
 import { useInView } from './components/useView';
 
 function App() {
@@ -17,6 +20,9 @@ function App() {
     const [setWorkersRef, workersInView] = useInView({ threshold: 0.1 });
     const [setPicsRef, picsInView] = useInView({ threshold: 0.1 });
     const [setAdressRef, adressInView] = useInView({ threshold: 0.1 });
+    const [setBandRef, bandInView] = useInView({ threshold: 0.1 });
+    const [setProteinRef, proteinInView] = useInView({ threshold: 0.1 });
+
 
     return (
         <>
@@ -43,11 +49,25 @@ function App() {
                 <Sponsors />
             </section>
             <section
+                id="band"
+                ref={setBandRef}
+                className={`section ${bandInView ? 'in-view' : ''}`}
+            >
+                <Bands />
+            </section>
+            <section
                 id="workers"
                 ref={setWorkersRef}
                 className={`section ${workersInView ? 'in-view' : ''}`}
             >
                 <Workers />
+            </section>
+            <section
+                id="proteins"
+                ref={setProteinRef}
+                className={`section ${proteinInView ? 'in-view' : ''}`}
+            >
+                <Protein />
             </section>
             <section
                 id="pics"

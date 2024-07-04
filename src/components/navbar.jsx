@@ -1,10 +1,7 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect, useRef } from "react";
-import logo from '../assets/LOGO-01.png';
+import logo from '../assets/logos/LOGO-01.png';
 import som from '../assets/som.mp3';
-import {
-    VolumeUp,
-    VolumeOff
-} from '@mui/icons-material';
 
 export default function Navbar() {
     const [audio, setAudio] = useState(false);
@@ -12,13 +9,6 @@ export default function Navbar() {
     const togglerRef = useRef(null);
     const collapseRef = useRef(null);
 
-    const handleAudioOff = () => {
-        setAudio(false);
-    };
-
-    const handleAudioOn = () => {
-        setAudio(true);
-    };
 
     const handleUserInteraction = () => {
         if (audioRef.current && !audio) {
@@ -92,7 +82,7 @@ export default function Navbar() {
                             <a className="nav-link active text-light" aria-current="page" onClick={() => scrollToSection('tickets')}>Ingressos</a>
                         </li>
                         <li className="nav-item me-4 ms-3">
-                            <a className="nav-link text-light" onClick={() => scrollToSection('workers')}>Assadores</a>
+                            <a className="nav-link text-light" onClick={() => scrollToSection('band')}>Atrações</a>
                         </li>
                         <li className="nav-item me-4 ms-3">
                             <a className="nav-link text-light ms-2" onClick={() => scrollToSection('pics')}>Fotos</a>

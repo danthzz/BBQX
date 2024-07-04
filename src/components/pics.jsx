@@ -1,14 +1,15 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
-import img1 from '../assets/img1.jpg';
-import img2 from '../assets/img2.jpg';
-import img3 from '../assets/img3.jpg';
-import img4 from '../assets/img4.jpg';
-import img5 from '../assets/img5.jpg';
-import img6 from '../assets/img6.jpg';
+import img1 from '../assets/pics/img1.jpg';
+import img2 from '../assets/pics/img2.jpg';
+import img3 from '../assets/pics/img3.jpg';
+import img4 from '../assets/pics/img4.jpg';
+import img5 from '../assets/pics/img5.jpg';
+import img6 from '../assets/pics/img6.jpg';
 
 export default function Pics() {
     return (
-        <div className="container align-items-center" id="pics">
+        <div className="container space-top align-items-center" id="pics">
             <h2 className="text-center mb-5">Última Edição</h2>
             <div className="row d-flex justify-content-center">
                 {/* Primeira coluna */}

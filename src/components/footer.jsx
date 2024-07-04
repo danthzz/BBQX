@@ -1,5 +1,6 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
-import logo2 from '../assets/LOGO-02.png'
+import logo2 from '../assets/logos/LOGO-02.png'
 
 export default function Footer() {
     return (
