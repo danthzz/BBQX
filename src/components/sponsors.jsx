@@ -10,12 +10,17 @@ import soubh from '../assets/sponsors/soubh.png';
 import blink from '../assets/sponsors/blink.png';
 import uai from '../assets/sponsors/uai.png';
 import avivar from '../assets/sponsors/avivar.png';
+import asiafood from '../assets/sponsors/asiafood.png';
 
 export default function Sponsors() {
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768 );
+    const [isMid, setIsMid] = useState(window.innerWidth >= 768 && window.innerWidth < 1200);
+    const [isBig, setIsBig] = useState(window.innerWidth > 1200);
 
     const handleResize = () => {
         setIsMobile(window.innerWidth < 768);
+        setIsMid(window.innerWidth > 768 && window.innerWidth < 988);
+        setIsBig(window.innerWidth < 988);
     };
 
     useEffect(() => {
@@ -23,8 +28,21 @@ export default function Sponsors() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const slidesPerView = isMobile ? 2 : 4;
-    const sponsors = [blink, sicredi, avivar, fm98, soubh, uai];
+    let slidesPerView;
+  switch (true) {
+    case isMobile:
+      slidesPerView = 2;
+      break;
+    case isMid:
+      slidesPerView = 3;
+      break;
+    case isBig:
+      slidesPerView = 4;
+      break;
+    default:
+      slidesPerView = 4;
+  }
+    const sponsors = [blink, sicredi, avivar, fm98, soubh, uai, asiafood];
 
     return (
         <div className="container space-top" id="sponsors">

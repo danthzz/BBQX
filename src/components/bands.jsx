@@ -11,7 +11,7 @@ import { BandCard } from './cards';
 export default function Workers() {
     return (
         <div className="container space-top" id="band">
-            <h2 className="text-center mb-4">Bandas</h2>
+            <h2 className="text-center mb-4">Atrações Musicais</h2>
             <div className="row justify-content-center">
                 <BandCard image={band1} />
                 <BandCard image={band2} />

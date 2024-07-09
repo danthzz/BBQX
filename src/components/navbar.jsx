@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect, useRef } from "react";
 import logo from '../assets/logos/LOGO-01.png';
-import som from '../assets/som.mp3';
+import som from '../assets/Malta.mp3';
 
 export default function Navbar() {
     const [audio, setAudio] = useState(false);
@@ -76,19 +76,22 @@ export default function Navbar() {
                 >
                     <ul className="navbar-nav mb-2 align-items-center">
                         <li className="nav-item me-4 ms-3">
-                            <a className="nav-link active text-light" aria-current="page" onClick={() => scrollToSection('home')}>Home</a>
+                            <a className="nav-link" aria-current="page" onClick={() => scrollToSection('home')}>Home</a>
                         </li>
                         <li className="nav-item me-4 ms-3">
-                            <a className="nav-link active text-light" aria-current="page" onClick={() => scrollToSection('tickets')}>Ingressos</a>
+                            <a className="nav-link" aria-current="page" onClick={() => scrollToSection('tickets')}>Ingressos</a>
                         </li>
                         <li className="nav-item me-4 ms-3">
-                            <a className="nav-link text-light" onClick={() => scrollToSection('band')}>Atrações</a>
+                            <a className="nav-link" onClick={() => scrollToSection('band')}>Atrações</a>
                         </li>
                         <li className="nav-item me-4 ms-3">
-                            <a className="nav-link text-light ms-2" onClick={() => scrollToSection('pics')}>Fotos</a>
+                            <a className="nav-link" onClick={() => scrollToSection('stations')}>Estações</a>
                         </li>
                         <li className="nav-item me-4 ms-3">
-                            <a className="nav-link text-light ms-2" onClick={() => scrollToSection('adress')}>Endereço</a>
+                            <a className="nav-link ms-2" onClick={() => scrollToSection('pics')}>Fotos</a>
+                        </li>
+                        <li className="nav-item me-4 ms-3">
+                            <a className="nav-link ms-2" onClick={() => scrollToSection('adress')}>Endereço</a>
                         </li>
                     </ul>
                     {/* <ul className="navbar-nav ms-md-auto mb-2 justify-content-center text-center align-items-center">

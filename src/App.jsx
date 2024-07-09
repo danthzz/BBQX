@@ -10,18 +10,19 @@ import Footer from './components/footer';
 import Counter from './components/counter'
 import Adress from './components/adress';
 import Bands from './components/bands';
-import Protein from './components/proteins';
+import Stations from './components/stations';
 import { useInView } from './components/useView';
 
 function App() {
-    const [setHomeRef, homeInView] = useInView({ threshold: 0.1 });
-    const [setSponsorsRef, sponsorsInView] = useInView({ threshold: 0.1 });
-    const [setTicketsRef, ticketsInView] = useInView({ threshold: 0.1 });
-    const [setWorkersRef, workersInView] = useInView({ threshold: 0.1 });
-    const [setPicsRef, picsInView] = useInView({ threshold: 0.1 });
-    const [setAdressRef, adressInView] = useInView({ threshold: 0.1 });
-    const [setBandRef, bandInView] = useInView({ threshold: 0.1 });
-    const [setProteinRef, proteinInView] = useInView({ threshold: 0.1 });
+    const [setHomeRef, homeInView] = useInView({ threshold: 0.2 });
+    const [setSponsorsRef, sponsorsInView] = useInView({ threshold: 0.2 });
+    const [setTicketsRef, ticketsInView] = useInView({ threshold: 0.2 });
+    const [setTickets2Ref, tickets2InView] = useInView({ threshold: 0.2 });
+    const [setWorkersRef, workersInView] = useInView({ threshold: 0.2 });
+    const [setPicsRef, picsInView] = useInView({ threshold: 0.2 });
+    const [setAdressRef, adressInView] = useInView({ threshold: 0.2 });
+    const [setBandRef, bandInView] = useInView({ threshold: 0.2 });
+    const [setStationsRef, stationsInView] = useInView({ threshold: 0.2 });
 
 
     return (
@@ -42,13 +43,6 @@ function App() {
                 <Counter />
             </section>
             <section
-                id="sponsors"
-                ref={setSponsorsRef}
-                className={`section ${sponsorsInView ? 'in-view' : ''}`}
-            >
-                <Sponsors />
-            </section>
-            <section
                 id="band"
                 ref={setBandRef}
                 className={`section ${bandInView ? 'in-view' : ''}`}
@@ -63,11 +57,26 @@ function App() {
                 <Workers />
             </section>
             <section
-                id="proteins"
-                ref={setProteinRef}
-                className={`section ${proteinInView ? 'in-view' : ''}`}
+                id="stations"
+                ref={setStationsRef}
+                className={`section ${stationsInView ? 'in-view' : ''}`}
             >
-                <Protein />
+                <Stations />
+            </section>
+            <section
+                id="tickets"
+                ref={setTickets2Ref}
+                className={`section ${tickets2InView ? 'in-view' : ''}`}
+            >
+                <Counter />
+            </section>
+
+            <section
+                id="sponsors"
+                ref={setSponsorsRef}
+                className={`section ${sponsorsInView ? 'in-view' : ''}`}
+            >
+                <Sponsors />
             </section>
             <section
                 id="pics"
